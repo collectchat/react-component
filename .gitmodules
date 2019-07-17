@@ -1,0 +1,4 @@
+[submodule "collectchat-widget2"]
+	path = collectchat-widget2
+	url = https://gitlab.com/collectchat/collectchat-widget2
+	branch = master
