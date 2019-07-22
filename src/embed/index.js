@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class index extends Component {
+export default class Embed extends Component {
     componentWillMount() {
         if (this.props.config) {
             window.collectchat = window.collectchat || {};
@@ -10,10 +10,19 @@ export default class index extends Component {
         }
     }
     render() {
+        const width = this.props.width ? this.props.width : '100%';
+        const height = this.props.height ? this.props.height : '600';
+
         return (
             <div>
-                { this.props.collectChatId ? <iframe src={`https://links.collect.chat/${this.props.collectChatId}`} width="100%" height="600" frameBorder="0"></iframe> : null }
+                { this.props.id ? <iframe src={`https://links.collect.chat/${this.props.id}`} width={width} height={height} frameBorder="0"></iframe> : null }
             </div>
         )
     }
 }
+
+Embed.propTypes = {
+    id: React.PropTypes.string.isRequired,
+    width: React.PropTypes.string,
+    height: React.PropTypes.string
+};

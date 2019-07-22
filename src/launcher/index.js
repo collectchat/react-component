@@ -8,8 +8,8 @@ export default class Launcher extends Component {
                 window.collectchat.config(this.props.config);
             }
         }
-        if (this.props.collectChatId) {
-            window.CollectId = this.props.collectChatId;
+        if (this.props.id) {
+            window.CollectId = this.props.id;
             const h = document.head || document.getElementsByTagName("head")[0];
             var s = document.createElement("script");
             s.setAttribute("type", "text/javascript");
@@ -21,3 +21,8 @@ export default class Launcher extends Component {
         return null;
     }
 }
+
+Launcher.propTypes = {
+    id: React.PropTypes.string.isRequired,
+    config: React.PropTypes.array
+};
